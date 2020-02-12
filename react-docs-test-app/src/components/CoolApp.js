@@ -47,10 +47,14 @@ class CoolApp extends React.Component {
             <TableSection
               name="Sporting Goods"
               items={this.state.sportingGoods}
+              searchText={this.state.searchText}
+              showOnlyStocked={this.state.showOnlyStocked}
             />
             <TableSection
               name="Electronics"
               items={this.state.electronics}
+              searchText={this.state.searchText}
+              showOnlyStocked={this.state.showOnlyStocked}
             />
           </tbody>
         </table>
