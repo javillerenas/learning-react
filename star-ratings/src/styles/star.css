@@ -4,7 +4,7 @@
   width: 25px;
   margin: 2px;
   float: left;
-  background-color: grey;
+  background-color: white;
   clip-path: polygon(
     50% 0%,
     63% 38%,
@@ -18,6 +18,12 @@
     37% 38%
   );
 }
+
+.star:hover {
+  transform: scale(1.3);
+  transition: all ease 0.2s;
+}
+
 .star.selected {
   background-color: red;
 }
