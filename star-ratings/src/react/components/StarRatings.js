@@ -10,7 +10,7 @@ export default class StarRating extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      starsSelected: 0
+      starsSelected: props.starsSelected || 0
     };
     this.change = this.change.bind(this);
   }
@@ -27,13 +27,6 @@ export default class StarRating extends Component {
 
   change(starsSelected) {
     this.setState({ starsSelected });
-  }
-
-  componentWillMount() {
-    const starsSelected = this.props.initialStarsSelected;
-    if (starsSelected) {
-      this.setState({ starsSelected });
-    }
   }
 
   render() {
