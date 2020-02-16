@@ -1,0 +1,22 @@
+.app-container {
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: #51a3e7;
+  background-image: linear-gradient(
+    90deg,
+    #51a3e7 0%,
+    #3795eb 50%,
+    #0095ff 100%
+  );
+
+  width: 300px;
+}
+
+.app-container:hover {
+  transform: scale(1.03);
+  transition: all ease .2s;
+}
+
+.app-container h1 {
+  color: white;
+}
