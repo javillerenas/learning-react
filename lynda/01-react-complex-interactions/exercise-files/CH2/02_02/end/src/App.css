@@ -1,0 +1,38 @@
+html, body {
+  text-align: center;
+  background: 
+  linear-gradient(
+      rgba(0, 0, 0, 0.25), 
+      rgba(0, 0, 0, 0.25)
+    ),
+  url('/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.animated-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 100px;
+}
+
+.static-logo {
+  height: 100px;
+}
+
+.App-header {
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
