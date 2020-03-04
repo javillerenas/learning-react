@@ -4,13 +4,15 @@
   "description": "",
   "main": "constants.js",
   "scripts": {
-    "start": "./node_modules/.bin/babel-node ./src/index.js"
+    "start": "./node_modules/.bin/babel-node ./src/index.js",
+    "test": "./node_modules/.bin/babel-node ./src/tests.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-latest": "^6.24.1"
+    "babel-preset-latest": "^6.24.1",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "babel-preset-stage-0": "^6.24.1",

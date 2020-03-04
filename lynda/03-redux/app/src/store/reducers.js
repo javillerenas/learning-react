@@ -1,4 +1,5 @@
 import C from "../constants";
+import { combineReducers } from "redux";
 
 /**
  *
@@ -38,13 +39,16 @@ function removeFromArray(array, toRemove) {
   return array.filter(item => item !== toRemove);
 }
 
-export const allSkyDays = (state = [], action) => {
+export const allSkiDays = (state = [], action) => {
   switch (action.type) {
     case C.ADD_DAY:
-      return state.find(action.payload) ? state : [...state, action.payload];
+      return (state.find(item => item === action.payload)) ? state : [...state, action.payload];
 
     case C.REMOVE_DAY:
       return state.filter(day => day !== action.payload);
+
+    default:
+      return state;
   }
 };
 
@@ -76,3 +80,13 @@ export const suggestions = (state = [], action) => {
       return state;
   }
 };
+
+export default combineReducers({
+  allSkiDays,
+  goal,
+  errors,
+  resortNames: combineReducers({
+    fetching,
+    suggestions
+  })
+});
