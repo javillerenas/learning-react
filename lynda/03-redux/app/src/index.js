@@ -1,46 +1,19 @@
-import C from "./constants";
-import { goal, skyDay, errors } from "./store/reducers";
-import expect from "expect";
+import C from "./store/constants";
+import appReducer from "./store/reducers";
+import initialState from "!./store/initialState.json";
+import { createStore } from "redux";
 
-/** Initial State */
-const state = 10;
+const store = createStore(appReducer, initialState);
 
-/** Action to change state */
-const action = {
-  type: C.SET_GOAL,
-  payload: 15
-};
-
-/** change the state through the action */
-const nextState = goal(state, action);
-expect(nextState).toEqual(action.payload);
-
-// ====== SKY DAY ========
-const state2 = null;
-const action2 = {
+console.log("init state", store.getState());
+store.dispatch({
   type: C.ADD_DAY,
   payload: {
-    resort: "Whistler",
-    date: "2020-15-01",
+    resort: "Mt Charleston",
+    date: "2020-1-15",
     powder: true,
     backcountry: false
   }
-};
-const nextState2 = skyDay(state2, action2);
-expect(nextState2).toEqual(action2.payload);
+})
 
-// ====== ERRORS ========
-const errorState = ["random error"];
-const errorActionAdd = {
-  type: C.ADD_ERROR,
-  payload: "added by Action"
-};
-const errorNextState = errors(errorState, errorActionAdd);
-expect(errorNextState).toEqual([...errorState, errorActionAdd.payload]);
-
-const errorActionClear = {
-  type: C.CLEAR_ERROR,
-  payload: "added by Action"
-};
-const errorNextState2 = errors(errorState, errorActionClear);
-expect(errorNextState2).toEqual(errorState);
+console.log("curr state", store.getState());

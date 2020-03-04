@@ -1,7 +1,7 @@
 import expect from "expect";
-import C from "./constants";
+import C from "./store/constants";
 import appReducer from "./store/reducers";
-import initialState from "./initialState.json";
+import initialState from "./store/initialState.json";
 
 let state = initialState;
 

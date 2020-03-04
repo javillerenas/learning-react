@@ -1,4 +1,4 @@
-import C from "../constants";
+import C from "./constants";
 import { combineReducers } from "redux";
 
 /**
@@ -35,7 +35,7 @@ export const errors = (state = [], action) => {
   }
 };
 
-function removeFromArray(array, toRemove) {
+function removeFromArray(array = [], toRemove) {
   return array.filter(item => item !== toRemove);
 }
 
